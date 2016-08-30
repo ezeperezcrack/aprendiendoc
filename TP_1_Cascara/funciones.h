@@ -1,9 +1,9 @@
 #ifndef FUNCIONES_H_INCLUDED
 #define FUNCIONES_H_INCLUDED
-int suma(int A, int B);
-int resta(int A, int B);
+float suma(float A, float B);
+float resta(float A, float B);
 float division(float A, float B);
-int multiplicacion(int A, int B);
+float multiplicacion(float A, float B);
 int factorial(int A);
 
 

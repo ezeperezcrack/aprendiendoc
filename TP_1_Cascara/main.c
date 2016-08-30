@@ -8,20 +8,17 @@ int main()
 {
     char seguir='s';
     int opcion=0;
-    int numUno;
-    int numDos;
-    int sum;
-    int res;
+    float numUno;
+    float numDos;
+    float sum;
+    float res;
     float div;
-    int mul;
+    float mul;
     int fact;
-    int contador=0;
+    int flag=0;
+
     while(seguir=='s')
     {
-        contador++;
-        switch(contador)
-        {
-            case 1:
         printf("1- Ingresar 1er operando (A=x)\n");
         printf("2- Ingresar 2do operando (B=y)\n");
         printf("3- Calcular la suma (A+B)\n");
@@ -31,42 +28,6 @@ int main()
         printf("7- Calcular el factorial (A!)\n");
         printf("8- Calcular todas las operacione\n");
         printf("9- Salir\n");
-        break;
-            case 2:
-        printf("1- Ingresar 1er operando (A=%d)\n", numUno);
-        printf("2- Ingresar 2do operando (B=y)\n");
-        printf("3- Calcular la suma (A+B)\n");
-        printf("4- Calcular la resta (A-B)\n");
-        printf("5- Calcular la division (A/B)\n");
-        printf("6- Calcular la multiplicacion (A*B)\n");
-        printf("7- Calcular el factorial (A!)\n");
-        printf("8- Calcular todas las operacione\n");
-        printf("9- Salir\n");
-        break;
-            case 3:
-        printf("1- Ingresar 1er operando (A=%d)\n", numUno);
-        printf("2- Ingresar 2do operando (B=%d)\n", numDos);
-        printf("3- Calcular la suma (A+B)\n");
-        printf("4- Calcular la resta (A-B)\n");
-        printf("5- Calcular la division (A/B)\n");
-        printf("6- Calcular la multiplicacion (A*B)\n");
-        printf("7- Calcular el factorial (A!)\n");
-        printf("8- Calcular todas las operacione\n");
-        printf("9- Salir\n");
-        break;
-            default:
-        printf("1- Ingresar 1er operando (A=%d)\n", numUno);
-        printf("2- Ingresar 2do operando (B=%d)\n", numDos);
-        printf("3- Calcular la suma (A+B)\n");
-        printf("4- Calcular la resta (A-B)\n");
-        printf("5- Calcular la division (A/B)\n");
-        printf("6- Calcular la multiplicacion (A*B)\n");
-        printf("7- Calcular el factorial (A!)\n");
-        printf("8- Calcular todas las operacione\n");
-        printf("9- Salir\n");
-        break;
-        }
-
 
         scanf("%d",&opcion);
 
@@ -87,11 +48,11 @@ int main()
                 printf("la resta de los numeros es %d\n",res);
                 break;
             case 5:
-                while(numDos==0)
-                {
-                    printf("ingrese un divisor distinto de 0 \n");
-                    scanf("%d", &numDos);
-                }
+                 while(numDos==0)
+                    {
+                        printf("Ud no puede dividir por 0\n");
+                        break;
+                    }
                 div=division(numUno,numDos);
                 printf("la division de los numeros es %f\n",div);
                 break;
@@ -112,8 +73,8 @@ int main()
 
                      while(numDos==0)
                     {
-                        printf("ingrese un divisor distinto de 0 \n");
-                        scanf("%d", &numDos);
+                        printf("Ud no puede dividir por 0\n");
+                        break;
                     }
                 div=division(numUno,numDos);
                 printf("la division de los numeros es %f\n",div);
