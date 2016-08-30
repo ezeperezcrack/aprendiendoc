@@ -1,11 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "funciones.h"
-int suma(int A, int B);
-int resta(int A, int B);
-float division(float A, float B);
-int multiplicacion(int A, int B);
-int factorial(int A);
+
 
 
 int main()
@@ -137,42 +133,4 @@ int main()
     return 0;
 }
 
-int suma(int A, int B)
-{
-    int total;
-    total=A+B;
-    return total;
-}
-int resta(int A, int B)
-{
-    int total;
-    total=A-B;
-    return total;
-}
-float division(float A, float B)
-{
-    float total;
-    total=A/B;
-    return total;
-}
-int multiplicacion(int A, int B)
-{
-    int total;
-    total=A*B;
-    return total;
-}
-int factorial(int A)
-{
-    int total;
-    int i=0;
-    int acumulador=0;
-    while(i<A)
-    {
-        i++;
-        total=i*A;
-        acumulador=acumulador+total;
-
-    }
-    return acumulador;
-}
 
