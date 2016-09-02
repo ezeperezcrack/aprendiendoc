@@ -16,20 +16,13 @@ int main()
     float mul;
     int fact;
     int flag=0;
-
+    int max=9;
+    int min=1;
+    char error='La opcion no se encuentra entre las posibles, desea ingresar otra opcion? s o n';
     while(seguir=='s')
     {
-        printf("1- Ingresar 1er operando (A=x)\n");
-        printf("2- Ingresar 2do operando (B=y)\n");
-        printf("3- Calcular la suma (A+B)\n");
-        printf("4- Calcular la resta (A-B)\n");
-        printf("5- Calcular la division (A/B)\n");
-        printf("6- Calcular la multiplicacion (A*B)\n");
-        printf("7- Calcular el factorial (A!)\n");
-        printf("8- Calcular todas las operacione\n");
-        printf("9- Salir\n");
 
-        scanf("%d",&opcion);
+        opcion=menu(error,max,min);
 
         switch(opcion)
         {
@@ -87,6 +80,8 @@ int main()
                 break;
             case 9:
                 seguir = 'n';
+                break;
+            default:
                 break;
         }
 

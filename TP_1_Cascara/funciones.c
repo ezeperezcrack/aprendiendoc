@@ -51,10 +51,12 @@ int factorial(int A)
 
 }
 */
-int menu(char texto[],char error[],int desde, int hasta)
+int menu(char error[],int desde, int hasta)
 {
     int opcion;
     char respuesta;
+
+
 /*    do
     {
         printf("%, texto");
@@ -70,7 +72,7 @@ int menu(char texto[],char error[],int desde, int hasta)
 */
         do
             {
-                printf("%, texto");
+                printf("1- Ingresar 1er operando (A=x)\n2- Ingresar 2do operando (B=y)\n3- Calcular la suma (A+B)\n4- Calcular la resta (A-B)\n5- Calcular la division (A/B)\n6- Calcular la multiplicacion (A*B)\n7- Calcular el factorial (A!)\n8- Calcular todas las operacione\n9- Salir\n");
                 scanf("%d", &opcion);
                 if(opcion>hasta || opcion<desde)
                 {
@@ -79,5 +81,5 @@ int menu(char texto[],char error[],int desde, int hasta)
 
                 }
             } while('s'==respuesta);
-        return -1;
+        return opcion;
 }
