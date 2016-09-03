@@ -16,13 +16,11 @@ int main()
     float mul;
     int fact;
     int flag=0;
-    int max=9;
-    int min=1;
-    char error='La opcion no se encuentra entre las posibles, desea ingresar otra opcion? s o n';
+    char error[]='La opcion no se encuentra entre las posibles, desea ingresar otra opcion? s o n';
     while(seguir=='s')
     {
 
-        opcion=menu(error,max,min);
+        opcion=menu("1- Ingresar 1er operando (A=x)\n2- Ingresar 2do operando (B=y)\n3- Calcular la suma (A+B)\n4- Calcular la resta (A-B)\n5- Calcular la division (A/B)\n6- Calcular la multiplicacion (A*B)\n7- Calcular el factorial (A!)\n8- Calcular todas las operacione\n9- Salir\n","error desea seguir ingresando?",1,9);
 
         switch(opcion)
         {
