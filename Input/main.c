@@ -10,7 +10,9 @@ int main()
     char continuar;
     char nombre[50];
     int r; // Respuesta
-
+    int rp;
+    int ro;
+    int rn;
 
     // EJEMPLO DE USO DE getInt
     r = getInt(&edad,"¿Cual es tu edad?","Rango valido [0 - 100]",1,100);
@@ -22,20 +24,20 @@ int main()
 
 
     // EJEMPLO DE USO DE getFloat
-    r = getFloat(&precio,"¿Cual es el precio?","Rango valido [0 - 10000]",1,10000);
-    if(r == 0)
+    rp = getFloat(&precio,"¿Cual es el precio?","Rango valido [0 - 10000]",1,10000);
+    if(rp == 0)
         printf("\nEl precio es: %0.2f\n",precio);
 
 
     // EJEMPLO DE USO DE getChar
-    r = getChar(&continuar,"Ingrese Opcion [A][B][C]","Solo [A][B][C]",'A','C');
-    if(r == 0)
+    ro = getChar(&continuar,"Ingrese Opcion [A][B][C]","Solo [A][B][C]",'A','C');
+    if(ro == 0)
         printf("\nContinuar: %c\n",continuar);
 
 
     // EJEMPLO DE USO DE getChar
-    r = getString(nombre,"Nombre: ","El largo debe ser entre 2 y 50", 2, 50);
-    if(r == 0)
+    rn = getString(nombre,"Nombre: ","El largo debe ser entre 2 y 50", 2, 50);
+    if(rn == 0)
         printf("\nNombre: %s\n",nombre);
 
 

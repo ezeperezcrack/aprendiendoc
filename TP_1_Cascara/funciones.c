@@ -1,4 +1,4 @@
-
+#include "funciones.h"
 float suma(float A, float B)
 {
     float total;

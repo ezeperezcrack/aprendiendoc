@@ -25,10 +25,9 @@ int getInt(int* input,char message[],char eMessage[], int lowLimit, int hiLimit)
         {
             printf("%s", eMessage);
             return -1;
-        }   else
-            {
-                *input=aux;
-            }
+        }
+               *input=aux;
+
     }   else
         {
             return -1;
@@ -48,12 +47,24 @@ int getInt(int* input,char message[],char eMessage[], int lowLimit, int hiLimit)
 */
 int getFloat(float* input,char message[],char eMessage[], float lowLimit, float hiLimit)
 {
-    //.........
-    //.........
-    //.........
-    //.........
+    float aux;
+    int val;
+    printf("%s",message);
+    val=scanf("%p",&aux);
+    if(val==1)
+    {
+        if(aux<lowLimit||aux>hiLimit)
+        {
+            printf("%s", eMessage);
+            return -1;
+        }
+               *input=aux;
 
-    *input = 1234.88;
+    }   else
+        {
+            return -1;
+        }
+
     return 0;
 }
 
@@ -70,12 +81,24 @@ int getFloat(float* input,char message[],char eMessage[], float lowLimit, float 
 */
 int getChar(char* input,char message[],char eMessage[], char lowLimit, char hiLimit)
 {
-    //.........
-    //.........
-    //.........
-    //.........
+    char aux;
+    int val;
+    printf("%s",message);
+    val=scanf("%p",&aux);
+    if(val==1)
+    {
+        if(aux<lowLimit||aux>hiLimit)
+        {
+            printf("%s", eMessage);
+            return -1;
+        }
+               *input=aux;
 
-    *input = 'S';
+    }   else
+        {
+            return -1;
+        }
+
     return 0;
 }
 

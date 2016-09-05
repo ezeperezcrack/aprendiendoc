@@ -23,3 +23,15 @@
 
 1460746094 c:\users\alumno\desktop\nueva carpeta\eze\input\inc\input.h
 
+1473099921 source:c:\users\eze utn\desktop\github\c\last\input\input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1473099246 source:c:\users\eze utn\desktop\github\c\last\input\main.c
+	<stdio.h>
+	<stdlib.h>
+	"inc/input.h"
+
+1472868076 c:\users\eze utn\desktop\github\c\last\input\inc\input.h
+
