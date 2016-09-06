@@ -18,7 +18,7 @@ int getInt(int* input,char message[],char eMessage[], int lowLimit, int hiLimit)
     int aux;
     int val;
     printf("%s",message);
-    val=scanf("%p",&aux);
+    val=scanf("%d",&aux);
     if(val==1)
     {
         if(aux<lowLimit||aux>hiLimit)
@@ -50,7 +50,7 @@ int getFloat(float* input,char message[],char eMessage[], float lowLimit, float 
     float aux;
     int val;
     printf("%s",message);
-    val=scanf("%p",&aux);
+    val=scanf("%d",&aux);
     if(val==1)
     {
         if(aux<lowLimit||aux>hiLimit)

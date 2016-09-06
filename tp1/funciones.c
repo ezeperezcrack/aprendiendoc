@@ -93,6 +93,7 @@ int menu(char texto[],char error[],int desde, int hasta)
             } else
             {
                 printf("%s", error);
+                fflush(stdin);
                 scanf("%c",&respuesta);
                 if(respuesta=='s')
                 {
