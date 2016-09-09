@@ -39,8 +39,8 @@ float division(float A, float B)
     return total;
 }
 /** \brief multiplicar dos numeros
- * \param A variable float a multi
- * \param B variable float a multi
+ * \param A variable float a multiplicar
+ * \param B variable float a multiplicar
  * \return total de la multiplicacion
  *
  */
@@ -83,30 +83,34 @@ int menu(char texto[],char error[],int desde, int hasta)
 
 
         printf("%s", texto);
+        fflush(stdin);
         val=scanf("%d", &opcion);
+
         if(1==val)
         {
             if(opcion<=hasta && opcion>=desde)
             {
                x=opcion;
 
-            } else
-            {
-                printf("%s", error);
-                fflush(stdin);
-                scanf("%c",&respuesta);
-                if(respuesta=='s')
+            }   else
                 {
-                 x=-1;
-                } else
+                    printf("%s", error);
+                    fflush(stdin);
+                    scanf("%c",&respuesta);
+                    respuesta=tolower(respuesta);
+                    if(respuesta=='s')
                     {
-                        x=9;
-                    }
+                     x=-1;
+                    }   else
+                        {
+                            x=9;
+                        }
 
-            }
+                }
 
         }   else
             {
+                printf("Opción no valida\n");
                 x=-1;
             }
 
