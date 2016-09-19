@@ -10,6 +10,8 @@ typedef struct {
 
 }EPersona;
 
+
+
 /**
  * Obtiene el primer indice libre del array.
  * @param lista el array se pasa como parametro.

@@ -1,14 +1,24 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "funciones.h"
-
-int buscarPorDni(EPersona lista[], int dni);
-
+#include <string.h>
 
 
 
 
 
+int buscarPorDni(EPersona lista[], int dni)
+{
+
+}
 
 
-int obtenerEspacioLibre(EPersona lista[]);
+
+
+
+
+
+int obtenerEspacioLibre(EPersona lista[])
+{
+
+}
