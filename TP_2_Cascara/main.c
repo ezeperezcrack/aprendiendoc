@@ -51,22 +51,21 @@ int main()
                         printf("ingrese su edad: \n");
                         fflush(stdin);
                         scanf("%d", &items[i].edad);
-                        if(items[i].estado==LLENO)
-                        {
+
                             if(items[i].edad<=18)
-                            {
-                                hasta18++;
-                            }   else
                                 {
-                                    if(items[i].edad>18&&items[i].edad<35)
+                                    hasta18++;
+                                }   else
                                     {
-                                        de19a35++;
-                                    }   else
+                                        if(items[i].edad>18&&items[i].edad<35)
                                         {
-                                            mayorDe35++;
-                                        }
-                                }
-                        }
+                                            de19a35++;
+                                        }   else
+                                            {
+                                                mayorDe35++;
+                                            }
+                    }
+
                         break;
                     }
 
