@@ -12,25 +12,21 @@ int main()
 {
     char seguir='s';
     int opcion=0;
-    int i,j, hasta18=0, de19a35=0, mayorDe35=0, flag=0, mayor;
+    int i,j,dni,posBorrar,hasta18=0, de19a35=0, mayorDe35=0, flag=0, mayor;
     EPersona items[CANT],aux;
     char respuesta;
 
 
     for(i=0;i<CANT;i++)
     {
-        items[i].estado=0;
+        items[i].estado=VACIO;
     }
 
 
     while(seguir=='s')
     {
 
-        printf("\n1- Agregar persona\n");
-        printf("2- Borrar persona\n");
-        printf("3- Imprimir lista ordenada por  nombre\n");
-        printf("4- Imprimir grafico de edades\n\n");
-        printf("5- Salir\n");
+        funcionMostrar();
 
         scanf("%d",&opcion);
 
@@ -41,16 +37,7 @@ int main()
                 {
                     if(items[i].estado==VACIO)
                     {
-                        items[i].estado=LLENO;
-                        printf("ingrese su nombre: \n");
-                        fflush(stdin);
-                        gets(items[i].nombre);
-                        printf("ingrese su dni: \n");
-                        fflush(stdin);
-                        scanf("%d", &items[i].dni);
-                        printf("ingrese su edad: \n");
-                        fflush(stdin);
-                        scanf("%d", &items[i].edad);
+                        items[i]=cargaDeDatos();
 
                             if(items[i].edad<=18)
                                 {
@@ -73,21 +60,25 @@ int main()
 
                 break;
             case 2:
-                for(i=0;i<CANT;i++)
+                printf("Ingrese dni de la persona a eliminar\n");
+                fflush(stdin);
+                scanf("%d", &dni);
+                posBorrar=buscarPorDni(items, dni);
+                if (items[posBorrar].estado==LLENO)
                 {
-                    if(items[i].estado==LLENO)
+                    printf("desea proceder con la eliminacion de %s? s o n.\n",items[posBorrar].nombre);
+                    fflush(stdin);
+                    scanf("%c", &respuesta);
+                    respuesta=tolower(respuesta);
+                   if (respuesta=='s')
+                   {
+                        items[posBorrar].estado=VACIO;
+                   }
+                } else
                     {
-                        printf("desea proceder con la eliminacion de %s? s o n.\n",items[i].nombre);
-                        fflush(stdin);
-                        scanf("%c", &respuesta);
-                        respuesta=tolower(respuesta);
-                        if (respuesta=='s')
-                        {
-                            items[i].estado=VACIO;
-                            break;
-                        }
+                        printf("No es un dni valido!");
                     }
-                }
+
                 break;
             case 3:
                for(i=0;i<CANT-1;i++)
@@ -158,7 +149,7 @@ int main()
                     }
                         printf("--+-----------------");
                         printf("\n  |<18\t19-35\t>35");
-                        printf("\n   %d\t%d\t%d", hasta18, de19a35, mayorDe35);
+                        printf("\n   %d\t%d\t%d\n", hasta18, de19a35, mayorDe35);
 
 
                 break;

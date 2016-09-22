@@ -1,6 +1,6 @@
 #ifndef FUNCIONES_H_INCLUDED
 #define FUNCIONES_H_INCLUDED
-
+#define CANT 20
 typedef struct {
 
     char nombre[50];
@@ -10,14 +10,10 @@ typedef struct {
 
 }EPersona;
 
+void funcionMostrar();
 
+EPersona cargaDeDatos();
 
-/**
- * Obtiene el primer indice libre del array.
- * @param lista el array se pasa como parametro.
- * @return el primer indice disponible
- */
-int obtenerEspacioLibre(EPersona lista[]);
 
 /**
  * Obtiene el indice que coincide con el dni pasado por parametro.
@@ -25,6 +21,7 @@ int obtenerEspacioLibre(EPersona lista[]);
  * @param dni el dni a ser buscado en el array.
  * @return el indice en donde se encuentra el elemento que coincide con el parametro dni
  */
-int buscarPorDni(EPersona lista[], int dni);
+int buscarPorDni(EPersona lista[CANT], int doc);
+
 
 #endif // FUNCIONES_H_INCLUDED
