@@ -35,27 +35,26 @@ int main()
             case 1:
                 for(i=0;i<CANT;i++)
                 {
-                    if(items[i].estado==VACIO)
+                    items[i]=cargaDeDatos();
+                    if(items[i].estado==LLENO)
                     {
-                        items[i]=cargaDeDatos();
-
-                            if(items[i].edad<=18)
+                        if(items[i].edad<=18)
+                        {
+                            hasta18++;
+                        }   else
+                            {
+                                if(items[i].edad>18&&items[i].edad<35)
                                 {
-                                    hasta18++;
+                                    de19a35++;
                                 }   else
                                     {
-                                        if(items[i].edad>18&&items[i].edad<35)
-                                        {
-                                            de19a35++;
-                                        }   else
-                                            {
-                                                mayorDe35++;
-                                            }
-                    }
-
-                        break;
-                    }
-
+                                        mayorDe35++;
+                                    }
+                    }   else
+                        {
+                            printf("La carga no se ha realizado, intente denuevo\n");
+                            break;
+                        }
                 }
 
                 break;
