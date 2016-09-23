@@ -4,7 +4,9 @@
 #include <string.h>
 #define CANT 20
 #define LLENO 1
-
+#define VACIO 0
+#define MIN 10000000
+#define MAX 99999999
 void funcionMostrar()
 {
     printf("1- Agregar persona\n");
@@ -32,17 +34,41 @@ return pos;
 
 EPersona cargaDeDatos()
 {
-    EPersona listado;
+    EPersona listado, buffer;
+    int x,y;
     listado.estado=LLENO;
     printf("ingrese su nombre: \n");
     fflush(stdin);
-    gets(listado.nombre);
+    gets(buffer.nombre);
+    
     printf("ingrese su dni: \n");
     fflush(stdin);
-    scanf("%d", &listado.dni);
+    x=scanf("%d", &buffer.dni);
+        if(x==1)
+        {
+            if(buffer.dni<MIN || buffer.dni>MAX)
+            {
+                printf("El numero de dni no es válido\n");
+                listado.estado=VACIO;
+            }   else
+                {
+                    listado.dni=buffer.dni;
+                }
+        }
     printf("ingrese su edad: \n");
     fflush(stdin);
-    scanf("%d", &listado.edad);
+    y=scanf("%d", &buffer.edad);
+        if(y==1)
+        {
+            if(buffer.edad>0 && buffer.edad<120)
+            {
+                listado.edad=buffer.edad;
+            }   else
+                {
+                    printf("La edad no es válida\n");
+                    listado.estado=VACIO;
+                }
+        }    
 return listado;
 }
 
