@@ -2,11 +2,7 @@
 #include <stdlib.h>
 #include "funciones.h"
 #include <string.h>
-#define CANT 20
-#define LLENO 1
-#define VACIO 0
-#define MIN 10000000
-#define MAX 99999999
+
 void funcionMostrar()
 {
     printf("1- Agregar persona\n");
@@ -19,7 +15,7 @@ void funcionMostrar()
 
 int buscarPorDni(EPersona lista[], int doc)
 {
-    int i,pos;
+    int i,pos=-1;
     for(i=0;i<CANT;i++)
     {
         if(doc==lista[i].dni)
@@ -32,51 +28,65 @@ int buscarPorDni(EPersona lista[], int doc)
 return pos;
 }
 
+int buscarEspLibre(EPersona lista[])
+{
+  int i,pos=-1;
+    for(i=0;i<CANT;i++)
+    {
+        if(VACIO==lista[i].estado)
+        {
+            pos=i;
+            break;
+        }
+    }
+
+return pos;
+}
+
 EPersona cargaDeDatos()
 {
-    EPersona listado, buffer;
+
+    EPersona listado;
     int x,y;
-    listado.estado=LLENO;
     printf("ingrese su nombre: \n");
     fflush(stdin);
     gets(listado.nombre);
     printf("ingrese su dni: \n");
     fflush(stdin);
-    x=scanf("%d", &buffer.dni);
+    x=scanf("%d", &listado.dni);
         if(x==1)
         {
-            if(buffer.dni<MIN || buffer.dni>MAX)
+            if(listado.dni<MIN || listado.dni>MAX)
             {
                 printf("El numero de dni no es válido\n");
                 listado.estado=VACIO;
-            }   else
-                {
-                    listado.dni=buffer.dni;
-                }
+                return listado;
+            }
         }   else
             {
                printf("No ingreso un numero\n");
-               listado.estado=VACIO; 
-            }    
+               listado.estado=VACIO;
+               return listado;
+            }
     printf("ingrese su edad: \n");
     fflush(stdin);
-    y=scanf("%d", &buffer.edad);
+    y=scanf("%d", &listado.edad);
         if(y==1)
         {
-            if(buffer.edad>0 && buffer.edad<120)
+            if(listado.edad<1 || listado.edad>120)
             {
-                listado.edad=buffer.edad;
-            }   else
-                {
-                    printf("La edad no es válida\n");
-                    listado.estado=VACIO;
-                }
+                printf("La edad no es válida\n");
+                listado.estado=VACIO;
+                return listado;
+            }
         }   else
             {
                 printf("No ingreso un numero\n");
                 listado.estado=VACIO;
+                return listado;
             }
-return listado;
+    listado.estado=LLENO;
+    return listado;
 }
 
 

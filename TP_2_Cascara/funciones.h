@@ -1,6 +1,10 @@
 #ifndef FUNCIONES_H_INCLUDED
 #define FUNCIONES_H_INCLUDED
 #define CANT 20
+#define LLENO 1
+#define VACIO 0
+#define MIN 1000000
+#define MAX 99999999
 typedef struct {
 
     char nombre[50];
@@ -28,7 +32,14 @@ EPersona cargaDeDatos();
  * @param doc el doc a ser buscado en el array.
  * @return el indice en donde se encuentra el elemento que coincide con el parametro doc
  */
-int buscarPorDni(EPersona lista[CANT], int doc);
+int buscarPorDni(EPersona lista[], int doc);
+
+/**
+ *  Obtiene el indice donde el array esta vacio.
+ * @param lista el array se pasa como parametro.
+ * @return el indice donde se van a cargar posteriormente los datos.
+ */
+int buscarEspLibre(EPersona lista[]);
 
 
 #endif // FUNCIONES_H_INCLUDED
