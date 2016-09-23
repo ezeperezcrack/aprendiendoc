@@ -15,7 +15,7 @@ void funcionMostrar()
 }
 
 
-int buscarPorDni(EPersona lista[CANT], int doc)
+int buscarPorDni(EPersona lista[], int doc)
 {
     int i,pos;
     for(i=0;i<CANT;i++)
