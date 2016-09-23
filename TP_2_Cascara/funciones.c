@@ -39,8 +39,7 @@ EPersona cargaDeDatos()
     listado.estado=LLENO;
     printf("ingrese su nombre: \n");
     fflush(stdin);
-    gets(buffer.nombre);
-    
+    gets(listado.nombre);
     printf("ingrese su dni: \n");
     fflush(stdin);
     x=scanf("%d", &buffer.dni);
@@ -54,7 +53,11 @@ EPersona cargaDeDatos()
                 {
                     listado.dni=buffer.dni;
                 }
-        }
+        }   else
+            {
+               printf("No ingreso un numero\n");
+               listado.estado=VACIO; 
+            }    
     printf("ingrese su edad: \n");
     fflush(stdin);
     y=scanf("%d", &buffer.edad);
@@ -68,7 +71,11 @@ EPersona cargaDeDatos()
                     printf("La edad no es válida\n");
                     listado.estado=VACIO;
                 }
-        }    
+        }   else
+            {
+                printf("No ingreso un numero\n");
+                listado.estado=VACIO;
+            }
 return listado;
 }
 
