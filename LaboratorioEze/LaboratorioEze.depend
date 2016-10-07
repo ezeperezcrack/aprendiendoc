@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1475814627 source:c:\users\eze utn\desktop\github\c\laboratorioeze\bibliotecalab.c
+	"BibliotecaLab.h"
+
+1475816599 source:c:\users\eze utn\desktop\github\c\laboratorioeze\main.c
+	"BibliotecaLab.h"
+
+1475865166 c:\users\eze utn\desktop\github\c\laboratorioeze\bibliotecalab.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

@@ -1,0 +1,22 @@
+int directoresMuchasPelis(struct director direc[],struct pelicula peli[])
+    {
+    int i,j,pelis;
+    int aux=0;
+
+    for(i=0;i<4;i++)
+    {
+	if(direc[i].idEstado ==1)
+	{
+        	for(j=0;j<10;j++) //recorre peliculas
+        	{
+            	if(peli[j].idEstado==1 && direc[i].idDirector == peli[j].idDirector)
+            		{
+                		aux++;
+            		}
+
+        	}
+	}
+           
+	direc[i].cantidad= aux;
+    }
+}
