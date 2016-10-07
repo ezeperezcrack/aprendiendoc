@@ -243,6 +243,91 @@ int printEmployees(employee* pEmployee, int length)
     return 0;
 }
 
+/**
+ * \brief Genera un número aleatorio
+ * \param desde Número aleatorio mínimo
+ * \param hasta Número aleatorio máximo
+ * \param iniciar Indica si se trata del primer número solicitado 1 indica que si
+ * \return retorna el número aleatorio generado
+ *
+ */
+char getNumeroAleatorio(int desde , int hasta, int iniciar)
+{
+    if(iniciar)
+        srand (time(NULL));
+    return desde + (rand() % (hasta + 1 - desde)) ;
+}
+
+/** \brief Realiza la suma.
+ * \param Operando A.
+ * \param Operando B.
+ * \return Devuelve el resultado de la suma.
+ */
+float suma(float a, float b)
+{
+    float resultadoSuma;
+    resultadoSuma = a+b;
+    return resultadoSuma;
+}
+
+/** \brief Realiza la resta.
+ * \param Operando A.
+ * \param Operando B.
+ * \return Devuelve el resultado de la resta A-B.
+ */
+float resta(float a,float b)
+{
+    float resultadoResta;
+    resultadoResta = a-b;
+    return resultadoResta;
+}
+
+/** \brief Realiza la multiplicacion.
+ * \param Operando A.
+ * \param Operando B.
+ * \return Devuelve el resultado de la multiplicacion.
+ */
+
+float multiplicacion(float a,float b)
+{
+    float resultadoMult;
+    resultadoMult = a*b;
+    return resultadoMult;
+}
+
+/** \brief Realiza la division.
+ * \param Operando A.
+ * \param Operando B.
+ * \return Devuelve el resultado de la division.
+ */
+
+float division(float a,float b)
+{
+    float resultadoDiv;
+    resultadoDiv = a/b;
+    return resultadoDiv;
+}
+
+
+/** \brief Calcula el factorial.
+ * \param Operando A.
+ * \return Devuelve el resultado del factorial.
+ */
+
+int factorial(int a)
+{
+    int i=0;
+    int temp=a;
+
+    for(i=1;i<a;i++)
+    {
+        temp=i*temp;
+    }
+
+    return temp;
+}
+
+
 
 
 
