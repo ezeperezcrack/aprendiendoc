@@ -59,16 +59,6 @@ int main()
         {
             cantidadElementos = al_len(listaDeEmpleados);
             printf("\nLa cantidad de elementos cargados es: %d", cantidadElementos);
-
-
-            for(i = 0; i<cantidadElementos; i++)
-            {
-
-                auxiliar = listaDeEmpleados->get(listaDeEmpleados, i);
-                printf("\n[ID: %d] %s %s\n", auxiliar->id, auxiliar->name, auxiliar->lastName);
-                system("pause");
-            }
-
         } else
             {
                 printf("ERROR 2.");

@@ -46,9 +46,8 @@ int parserEmployee(FILE *pFile , ArrayList *pArrayListEmployee)
 
                     strcpy(empleados->name, nombre);
                     strcpy(empleados->lastName, apellido);
-
-
                     empleados->id = atoi(id);
+                    al_add(pArrayListEmployee,empleados);
 
 
 

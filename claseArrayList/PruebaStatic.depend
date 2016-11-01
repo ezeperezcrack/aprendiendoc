@@ -72,3 +72,29 @@
 
 1477952017 d:\practica_pair_v1.2\parser.h
 
+1477955832 source:c:\users\alumno.lab01pc25\desktop\w\clasearraylist\employee.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+	"Employee.h"
+
+1463604778 c:\users\alumno.lab01pc25\desktop\w\clasearraylist\arraylist.h
+
+1477953426 c:\users\alumno.lab01pc25\desktop\w\clasearraylist\employee.h
+
+1477956988 source:c:\users\alumno.lab01pc25\desktop\w\clasearraylist\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"Employee.h"
+	"parser.h"
+
+1477952016 c:\users\alumno.lab01pc25\desktop\w\clasearraylist\parser.h
+
+1477954624 source:c:\users\alumno.lab01pc25\desktop\w\clasearraylist\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"Employee.h"
+
