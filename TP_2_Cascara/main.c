@@ -83,7 +83,7 @@ int main()
                     {
                         for(j=i+1;j<CANT;j++)
                         {
-                            if((strcmp(items[i].nombre,items[j].nombre))>0)
+                            if((strcmp(items[i].nombre,items[j].nombre)>0))
                             {
                                 aux=items[i];
                                 items[i]=items[j];

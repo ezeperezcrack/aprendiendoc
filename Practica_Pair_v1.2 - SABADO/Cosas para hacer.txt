@@ -1,0 +1,44 @@
+3. Agregar un registro - LISTO.
+
+4. Borrar un registro - PENDIENTE.
+Ahi tengo que eliminar
+
+Para eliminar podemos utilizar dos metodos, el pop y el remove.
+
+German se tiro por el pop,
+
+Lo que hace el pop es levantar de el array lo que quiere eliminar, lo elimina
+y lo devuelve, entonces el puede mostrar desde afuera de la funcion pop lo que eliminó.
+
+El pop recibe:
+pop(ArrayList, IndiceQueVaABorrar);
+Entonces hay que hacer algo para obtener el indice de pElement del ArrayList.
+Hay que buscar dentro del array list el indice mediante un ID Ingresado
+Entonces con un for recorro el array list y busco la coincidencia con el ID ingresado
+
+Entonces retorno la posiciòn del array list (valor de i) que es la que se va a pasar
+como argumento para borrar.
+
+
+indexOf( ??? ) Recibe el array List y un puntero a void, el puntero a void
+va a ser el puntero al EMPLEADO.
+
+Retorna el INDICE del empleado que se le pasa por referencia.
+
+Pasos:
+
+1. BuscarXId (Retornara un puntero al empleado).
+2. Meterlo a IndexOf (Que retornara el INDICE).
+3. Pop(ArrayList, valorQueRetornaelIndexOf);
+
+-----------------------------------
+5. Listar desde hasta
+
+Vamos a usar la funcion al_SubList (Retorna un nuevo array list con la 
+porcion de la lista entre el rango especificado)
+
+Desde: DIce el indice desde donde se va a empezar a mostrar.
+Hasta: Dice hasta donde va a llegar excliyendolo (0 - 100: Muestra desde el 0 al 99).
+
+-----------------------------------
+
