@@ -231,6 +231,11 @@ int al_remove(ArrayList* pList,int index)
 int al_clear(ArrayList* pList)
 {
     int returnAux = -1;
+    if(pList!=NULL)
+    {
+        pList->size=0;
+        returnAux=0;
+    }
 
     return returnAux;
 }
@@ -245,7 +250,10 @@ int al_clear(ArrayList* pList)
 ArrayList* al_clone(ArrayList* pList)
 {
     ArrayList* returnAux = NULL;
-
+    if(pList!=NULL)
+    {
+            returnAux=pList;
+    }
     return returnAux;
 }
 
@@ -262,7 +270,19 @@ ArrayList* al_clone(ArrayList* pList)
 int al_push(ArrayList* pList, int index, void* pElement)
 {
     int returnAux = -1;
-
+    if(pList!=NULL && pElement!=NULL && (index>=0 && index<pList->size))
+    {
+        if(resizeUp(pList)!=1)
+        {
+            if(expand(pList,index)!=1)
+            {
+                if(al_set(pList,index,pElement)!=1)
+                {
+                        returnAux=0;
+                }
+            }
+        }
+    }
     return returnAux;
 }
 
@@ -275,8 +295,18 @@ int al_push(ArrayList* pList, int index, void* pElement)
  */
 int al_indexOf(ArrayList* pList, void* pElement)
 {
-    int returnAux = -1;
-
+    int returnAux = -1, i;
+    if(pList!=NULL && pElement!=NULL)
+    {
+        for(i=0;i<al_len(pList);i++)
+        {
+            if(pList->pElements[i]==pElement)
+            {
+                returnAux=i;
+                break;
+            }
+        }
+    }
     return returnAux;
 }
 
@@ -289,7 +319,16 @@ int al_indexOf(ArrayList* pList, void* pElement)
 int al_isEmpty(ArrayList* pList)
 {
     int returnAux = -1;
-
+    if(pList!=NULL)
+    {
+        if(al_len(pList)==0)
+        {
+            returnAux=1;
+        }   else
+            {
+                returnAux=0;
+            }
+    }
     return returnAux;
 }
 
