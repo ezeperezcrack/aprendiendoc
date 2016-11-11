@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1477105842 source:c:\users\eze utn\desktop\github\c\tp3\emovie.c
+	"Emovie.h"
+
+1477105646 c:\users\eze utn\desktop\github\c\tp3\emovie.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1477084995 source:c:\users\eze utn\desktop\github\c\tp3\validaciones.c
+	"Validaciones.h"
+	"Emovie.h"
+
+1477084995 c:\users\eze utn\desktop\github\c\tp3\validaciones.h
+
+1477105646 source:c:\users\eze utn\desktop\github\c\tp3\main.c
+	"Emovie.h"
+	"Validaciones.h"
+
