@@ -283,6 +283,13 @@ int al_push(ArrayList* pList, int index, void* pElement)
             }
         }
     }
+    if(index==pList->size)
+        {
+            if(al_add(pList,pElement)==0)
+            {
+                returnAux=0;
+            }
+        }
     return returnAux;
 }
 
@@ -344,7 +351,21 @@ int al_isEmpty(ArrayList* pList)
 void* al_pop(ArrayList* pList,int index)
 {
     void* returnAux = NULL;
-
+    if(pList!=NULL && index>=0 && index<pList->size)
+    {
+        returnAux=al_get(pList,index);
+        if(returnAux!=NULL)
+        {
+            if(al_remove(pList,index)==0)
+            {
+                contract(pList,index);
+            }
+        }
+    }
+    if(index==pList->size)
+    {
+        returnAux=NULL;
+    }
     return returnAux;
 }
 
@@ -360,7 +381,22 @@ void* al_pop(ArrayList* pList,int index)
 ArrayList* al_subList(ArrayList* pList,int from,int to)
 {
     void* returnAux = NULL;
-
+    int i;
+    ArrayList* newList=al_newArrayList();
+    if(pList!=NULL && from<to && from>=0 && to < pList->size)
+    {
+            for(i=from;i<to;i++)
+            {
+                if(pList->pElements[i]!=NULL)
+                {
+                   al_add(newList,pList->pElements[i]);
+                }
+            }
+            if(newList!=NULL)
+            {
+                returnAux=al_clone(newList);
+            }
+    }
     return returnAux ;
 }
 
@@ -376,8 +412,28 @@ ArrayList* al_subList(ArrayList* pList,int from,int to)
  */
 int al_containsAll(ArrayList* pList,ArrayList* pList2)
 {
-    int returnAux = -1;
+    int returnAux = -1,i,j,cont=0;
+    if(pList!=NULL && pList2!=NULL)
+    {
+        for(i=0;i<al_len(pList);i++)
+        {
+            for(j=0;j<al_len(pList2);j++)
+            {
+                if(pList->pElements[i]==pList2->pElements[j])
+                {
+                    cont++;
+                } else
+                {
+                    return returnAux=0;
 
+                }
+            }
+        }
+        if(cont==pList2->size)
+        {
+            returnAux=1;
+        }
+    }
     return returnAux;
 }
 
