@@ -351,18 +351,21 @@ int al_isEmpty(ArrayList* pList)
 void* al_pop(ArrayList* pList,int index)
 {
     void* returnAux = NULL;
-    if(pList!=NULL && index>=0 && index<pList->size)
+    if(pList!=NULL && (index >= 0 && index < pList->size))
     {
-        returnAux=al_get(pList,index);
-        if(returnAux!=NULL)
+        if(al_isEmpty(pList)==0)
         {
-            if(al_remove(pList,index)==0)
+            returnAux=al_get(pList,index);
+            if(returnAux!=NULL)
             {
-                contract(pList,index);
+                if(al_remove(pList,index)==-1)
+                {
+                    returnAux=NULL;
+                }
             }
         }
-    }
-    if(index==pList->size)
+
+    } else if(index==pList->size)
     {
         returnAux=NULL;
     }
@@ -392,9 +395,12 @@ ArrayList* al_subList(ArrayList* pList,int from,int to)
                    al_add(newList,pList->pElements[i]);
                 }
             }
-            if(newList!=NULL)
+            if(al_isEmpty(newList)==0 && newList!=NULL)
             {
                 returnAux=al_clone(newList);
+            }else
+            {
+                returnAux=NULL;
             }
     }
     return returnAux ;
@@ -415,25 +421,30 @@ int al_containsAll(ArrayList* pList,ArrayList* pList2)
     int returnAux = -1,i,j,cont=0;
     if(pList!=NULL && pList2!=NULL)
     {
-        for(i=0;i<al_len(pList);i++)
-        {
-            for(j=0;j<al_len(pList2);j++)
+            for(i=0;i<al_len(pList2);i++)
             {
-                if(pList->pElements[i]==pList2->pElements[j])
+                for(j=0;j<al_len(pList);j++)
                 {
-                    cont++;
-                } else
-                {
-                    return returnAux=0;
+                    if(pList->pElements[j]==pList2->pElements[i])
+                    {
+                        cont++;
+                        break;
+                    } else
+                    {
+                        continue;
 
+                    }
                 }
             }
-        }
-        if(cont==pList2->size)
+    if(cont==pList2->size)
         {
             returnAux=1;
+        } else
+        {
+            returnAux=0;
         }
     }
+
     return returnAux;
 }
 
@@ -447,7 +458,10 @@ int al_containsAll(ArrayList* pList,ArrayList* pList2)
 int al_sort(ArrayList* pList, int (*pFunc)(void* ,void*), int order)
 {
     int returnAux = -1;
+    if(pList!=NULL&&order>-1&&order<2)
+    {
 
+    }
     return returnAux;
 }
 
@@ -460,7 +474,24 @@ int al_sort(ArrayList* pList, int (*pFunc)(void* ,void*), int order)
 int resizeUp(ArrayList* pList)
 {
     int returnAux = -1;
+    void* auxiliar=NULL;
+    if(pList!=NULL)
+    {
+        if(pList->size == pList->reservedSize)
+        {
+            auxiliar=realloc(pList->pElements,sizeof(void*)*(pList->reservedSize+AL_INCREMENT));
+            if(auxiliar!=NULL)
+            {
+                pList->reservedSize=(pList->reservedSize+ AL_INCREMENT);
+                pList->pElements= auxiliar;
+                returnAux=0;
+            }
 
+        }   else
+            {
+                returnAux=0;
+            }
+    }
     return returnAux;
 
 }
@@ -473,8 +504,18 @@ int resizeUp(ArrayList* pList)
  */
 int expand(ArrayList* pList,int index)
 {
-    int returnAux = -1;
-
+    int returnAux = -1,i;
+    if(pList!=NULL && (index>=0 && index < pList->size))
+    {
+        if(resizeUp(pList)==0)
+        {
+            for (i=al_len(pList)-1;i>=index;i--)
+            {
+                pList->pElements[i+1]=pList->pElements;
+            }
+            returnAux=0;
+        }
+    }
     return returnAux;
 }
 
@@ -487,6 +528,14 @@ int expand(ArrayList* pList,int index)
 int contract(ArrayList* pList,int index)
 {
     int returnAux = -1;
-
+    if(pList!=NULL&&(index >=0 && index < pList->size))
+    {
+        for(i=index;i<al_len(pList);i++)
+        {
+            pList->pElements[i]=pList->pElements[i+1];
+        }
+        pList->size--;
+        returnAux=0;
+    }
     return returnAux;
 }
